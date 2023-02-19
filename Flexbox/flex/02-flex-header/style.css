@@ -19,7 +19,7 @@
     /* this removes the dots on the list items*/
     list-style-type: none;
     display: flex;
-    margin: 0;
+    margin: 0; /* Mistake 1: Check using f12 to see if there are any padding/margin that is being the problem */
     padding: 0;
     gap: 8px;
   }
