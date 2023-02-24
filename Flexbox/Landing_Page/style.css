@@ -1,0 +1,13 @@
+.header, .row1, .row2, .row3, .row4, footer {
+    display: flex;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.row4 {
+    flex: 1;
+}
