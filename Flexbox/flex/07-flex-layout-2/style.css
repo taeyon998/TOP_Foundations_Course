@@ -24,40 +24,106 @@ body {
 
 .card {
   border: 1px solid #eee;
-  box-shadow: 2px 4px 16px rgba(0,0,0,.06);
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, .06);
   border-radius: 4px;
 }
 
 /* SOLUTION */
-.cards_sidebar{
+
+.cards_sidebar {
+
   display: flex;
+
 }
 
-.cards{
+.cards {
+
   flex-wrap: wrap;
+
   display: flex;
+  /* Without this, does not wrap! (since its children .card is not flex item */
+
+
 
   padding: 32px;
+
 }
 
-.card{
+
+
+.card {
+
   width: 300px;
-}
 
-
-
-.cards_sidebar{
-  flex: 1;
 }
 
 body {
+
   display: flex;
+
   flex-direction: column;
+
 }
 
-.header{
+
+.cards_sidebar {
+
+  flex: 1;
+
+}
+
+.sidebar {
+
+  flex: none;
+
+  width: 300px;
+
+  padding: 16px;
+
+}
+
+.cards {
+
+  gap: 32px;
+
+}
+
+.header {
+
   font-size: 32px;
+
   font-weight: 900px;
-  
+
+  display: flex;
+
   align-items: center;
+
+  padding: 16px;
+
+}
+
+.footer {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+a {
+
+  text-decoration: none;
+
+  font-size: 24px;
+
+  color: white;
+
+}
+
+.card {
+
+  padding: 32px;
+
 }
