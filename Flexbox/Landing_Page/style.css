@@ -1,13 +1,69 @@
-.header, .row1, .row2, .row3, .row4, footer {
+/* Flex Alignment 1 - header, 3 rows, footer (push footer to bottom) */
+.header, .row1, .row2, .row3, .row4, .footer {
     display: flex;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* needed to push footer to bottom of page */
 }
 
 .row4 {
     flex: 1;
 }
+
+/* Flex Alignment 2 - within containers */
+.header, .row1, .row2, .row3, .row4, .footer {
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    justify-content: space-around;
+}
+
+.row2 {
+    flex-direction: column;
+}
+
+.imgtxts {
+    display: flex;
+}
+
+.row3 {
+    flex-direction: column;
+}
+
+/* Padding & Margin */
+
+.header, .row1, .row2, .row3, .row4 {
+    margin-bottom: 50px;
+}
+
+.row1 {
+    gap: 20px;
+}
+
+.imgtxts{
+    gap: 50px;
+}
+
+.imgtxt1, .imgtxt2, .imgtxt3, .imgtxt4 {
+    max-width: 100px;
+}
+
+.row3 {
+    margin: 100px 0px 100px 0px;
+}
+
+.quote_speaker {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+.speaker{
+    text-align: right;
+}
+
