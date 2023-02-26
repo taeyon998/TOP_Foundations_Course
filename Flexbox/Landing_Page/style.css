@@ -47,6 +47,7 @@ body {
 
 /* Padding & Margin */
 
+
 .row1, .row2, .row3, .row4 {
     margin-bottom: 20px;
 }
@@ -70,7 +71,7 @@ body {
 .quote_speaker {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 600px;
 }
 
 .speaker{
@@ -88,6 +89,12 @@ button {
 
 h4{
     margin: 0; /* h4 has default margin, so let's cut it out */
+}
+
+.sign-up-block{
+    width: 800px;
+    border-radius: 8px; 
+    padding: 16px;
 }
 
 /* CSS properties */
@@ -138,9 +145,12 @@ button {
     background-color: #E5E7EB;
 }
 
+.quote {
+    font-size: 36px;
+    font-weight: 900;
+    color: #1F2937;
+}
+
 .sign-up-block{
     background-color: #3882F6;
-    width: 500px;
-    border-radius: 8px; 
-    padding: 16px;
 }
