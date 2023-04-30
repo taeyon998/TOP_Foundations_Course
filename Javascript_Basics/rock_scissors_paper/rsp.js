@@ -31,7 +31,7 @@ function playRound(uchoice, pchoice){
             console.log('tie')  
         }
         else {
-            cchoice++
+            compscore++
             console.log('lost')
         }
     }
