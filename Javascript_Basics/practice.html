@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Page Title</title>
 </head>
+
 <body>
+  <h1>
+    THE TITLE OF YOUR WEBPAGE
+  </h1>
+  <div id="container"></div>
+
   <script>
     // Your JavaScript goes here!
-    console.log((4 + 6 + 9) / 77)
+    const container = document.querySelector('#container');
+
+    const content = document.createElement('div');
+    content.classList.add('content');
+    content.textContent = 'This is the glorious text-content!';
+
+    container.appendChild(content);
+
+    const redp = document.createElement('p');
+    redp.classList.add('redp');
+    redp.textContent = 'Hey I\'m red!';
+    redp.style.color = 'red';
+
+    container.appendChild(redp);
+
   </script>
 </body>
+
 </html>
