@@ -29,6 +29,20 @@
 
     container.appendChild(redp);
 
+    const blackpink = document.createElement('div');
+    blackpink.classList.add('blackpink');
+    blackpink.style.border = '1px solid';
+    blackpink.style.backgroundColor = 'pink';
+    
+    const bp_h1 = document.createElement('h1');
+    bp_h1.textContent = 'I\'m in a div';
+    const bp_p = document.createElement('p');
+    bp_p.textContent = 'ME TOO!';
+    blackpink.append(bp_h1);
+    blackpink.append(bp_p);
+
+    container.appendChild(blackpink);
+
   </script>
 </body>
 
