@@ -12,7 +12,9 @@
   </h1>
   <div id="container"></div>
 
-  <script>
+  <button id="btn">Click Me Too</button>
+
+  <script defer>
     // Your JavaScript goes here!
     const container = document.querySelector('#container');
 
@@ -29,20 +31,29 @@
 
     container.appendChild(redp);
 
-    const blackpink = document.createElement('div');
-    blackpink.classList.add('blackpink');
-    blackpink.style.border = '1px solid';
-    blackpink.style.backgroundColor = 'pink';
+    const div = document.createElement('div');
+    div.style.border = '1px solid black';
+    div.style.backgroundColor = 'pink';
+
+    const h1 = document.createElement('h1');
+    h1.textContent = "I'm in a div";
+
+    const p = document.createElement('p');
+    p.textContent = "ME TOO!";
+
+    div.appendChild(h1);
+    div.appendChild(p);
+
+    container.appendChild(div);
+
+    const btn = document.querySelector('#btn'); 
+
+    btn.addEventListener('click', function (e) {
+      console.log(e);
+      console.log(e.target);
+      e.target.style.background = 'blue';
+    });
     
-    const bp_h1 = document.createElement('h1');
-    bp_h1.textContent = 'I\'m in a div';
-    const bp_p = document.createElement('p');
-    bp_p.textContent = 'ME TOO!';
-    blackpink.append(bp_h1);
-    blackpink.append(bp_p);
-
-    container.appendChild(blackpink);
-
   </script>
 </body>
 
