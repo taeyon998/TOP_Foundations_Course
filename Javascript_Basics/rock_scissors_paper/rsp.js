@@ -1,43 +1,87 @@
-function getComputerChoice(){
-    validChoices = ['rock','paper','scissors']
-    const n = Math.floor(Math.random()*3)
+let playerScore = 0;
+let computerScore = 0;
+let isGameOver = false;
+let numPlayed = 0
+
+const rockBtn = document.querySelector('#b_rock')
+const paperBtn = document.querySelector('#b_scissors')
+const scissorsBtn = document.querySelector('#b_paper')
+const resultDiv = document.querySelector("#result")
+
+rockBtn.addEventListener('click', () => {
+    playRound("rock", getComputerChoice());
+});
+
+paperBtn.addEventListener('click', () => {
+    playRound("paper", getComputerChoice());
+});
+
+scissorsBtn.addEventListener('click', () => {
+    playRound("scissors", getComputerChoice());
+});
+
+
+
+
+function playRound(uchoice, cchoice) {
+    if ((uchoice === "rock" && cchoice === "scissors") || (uchoice === "scissors" && cchoice === "paper") || (uchoice === "paper" && cchoice === "rock")) {
+        playerScore++
+        updateResultDiv('Won!')
+    }
+    else if (uchoice === cchoice) {
+        updateResultDiv('Tie!')
+    }
+    else {
+        computerScore++
+        updateResultDiv('Lost!')
+    }
+    numPlayed++
+}
+
+function updateResultDiv(result) {
+    resultDiv.textContent = result;
+  }
+
+function getComputerChoice() {
+    validChoices = ['rock', 'paper', 'scissors']
+    const n = Math.floor(Math.random() * 3)
 
     return validChoices[n]
 }
 
-function getUserChoice(){
-    validChoices = ['rock','paper','scissors']
+// function getUserChoice() {
+//     validChoices = ['rock', 'paper', 'scissors']
 
-    do {
-        var uchoice = prompt("Enter age: ").toLowerCase() 
-    } while(!validChoices.includes(uchoice))
+//     do {
+//         var uchoice = prompt("Enter age: ").toLowerCase()
+//     } while (!validChoices.includes(uchoice))
 
-    return uchoice
-}
+//     return uchoice
+// }
 
-function playRound(uchoice, pchoice){
-    let userscore = 0
-    let compscore = 0  
+// function playRound(uchoice, pchoice){
+//     let userscore = 0
+//     let compscore = 0  
 
-    for (let i=0; i < 5; i++){
-        let uchoice = getUserChoice()
-        let cchoice = getComputerChoice()
+//     for (let i=0; i < 5; i++){
+//         let uchoice = getUserChoice()
+//         let cchoice = getComputerChoice()
 
-        if ( (uchoice === "rock" && cchoice === "scissors") || (uchoice === "scissors" && cchoice === "paper") || (uchoice === "paper" && cchoice === "rock") ) {
-            userscore++
-            console.log('won')
-        }
-        else if (uchoice === compscore){          
-            console.log('tie')  
-        }
-        else {
-            compscore++
-            console.log('lost')
-        }
-    }
+//         if ( (uchoice === "rock" && cchoice === "scissors") || (uchoice === "scissors" && cchoice === "paper") || (uchoice === "paper" && cchoice === "rock") ) {
+//             userscore++
+//             console.log('won')
+//         }
+//         else if (uchoice === compscore){          
+//             console.log('tie')  
+//         }
+//         else {
+//             compscore++
+//             console.log('lost')
+//         }
+//     }
 
-    result = userscore > compscore ? "User Won!" : "Computer Won!"
-    console.log(result)
-}
+//     result = userscore > compscore ? "User Won!" : "Computer Won!"
+//     console.log(result)
+// }
 
-playRound(getUserChoice(), getComputerChoice())
+// playRound(getUserChoice(), getComputerChoice())
