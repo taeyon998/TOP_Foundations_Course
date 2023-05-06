@@ -2,24 +2,31 @@ let playerScore = 0;
 let computerScore = 0;
 let isGameOver = false;
 let numPlayed = 0
+let scoreToReach = 5;
 
 const rockBtn = document.querySelector('#b_rock')
 const paperBtn = document.querySelector('#b_scissors')
 const scissorsBtn = document.querySelector('#b_paper')
 const resultDiv = document.querySelector("#result")
 const playerSc = document.querySelector("#player")
-const ComputerSc = document.querySelector("#player")
+const computerSc = document.querySelector("#computer")
 
 rockBtn.addEventListener('click', () => {
-    playRound("rock", getComputerChoice());
+    if (!isGameOver){
+        playRound("rock", getComputerChoice());
+    }
 });
 
 paperBtn.addEventListener('click', () => {
-    playRound("paper", getComputerChoice());
+    if (!isGameOver){
+        playRound("paper", getComputerChoice());
+    }
 });
 
 scissorsBtn.addEventListener('click', () => {
-    playRound("scissors", getComputerChoice());
+    if (!isGameOver){
+        playRound("scissors", getComputerChoice());
+    }
 });
 
 
@@ -29,6 +36,7 @@ function playRound(uchoice, cchoice) {
     if ((uchoice === "rock" && cchoice === "scissors") || (uchoice === "scissors" && cchoice === "paper") || (uchoice === "paper" && cchoice === "rock")) {
         playerScore++
         updateResultDiv('Won!')
+        playerSc.textContent = playerScore
     }
     else if (uchoice === cchoice) {
         updateResultDiv('Tie!')
@@ -36,8 +44,22 @@ function playRound(uchoice, cchoice) {
     else {
         computerScore++
         updateResultDiv('Lost!')
+        computerSc.textContent = computerScore
     }
     numPlayed++
+
+    endGame()
+}
+
+function endGame(){
+    if (playerScore >= scoreToReach){
+        updateResultDiv('Player Won!')
+        isGameOver = true
+    }
+    else if(computerScore >= scoreToReach){
+        updateResultDiv('Computer Won!')
+        isGameOver = true
+    }
 }
 
 function updateResultDiv(result) {
